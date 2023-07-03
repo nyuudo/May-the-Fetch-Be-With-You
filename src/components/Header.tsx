@@ -5,7 +5,12 @@ import { useLocation } from "react-router";
 
 const Header = () => {
   const location = useLocation();
-  const { setShowSignInModal } = useContext(AuthContext);
+  const { setShowSignInModal, setShowLogInModal } = useContext(AuthContext);
+
+  const handlesLoginClick = () => {
+    setShowLogInModal(true);
+  };
+
   const handleSignUpClick = () => {
     setShowSignInModal(true);
   };
@@ -16,7 +21,9 @@ const Header = () => {
       <div className="userAuth">
         {location.pathname !== "/starships" && (
           <>
-            <button className="loginSignin">LOG IN</button>
+            <button className="loginSignin" onClick={handlesLoginClick}>
+              LOG IN
+            </button>
             //
             <button className="loginSignin" onClick={handleSignUpClick}>
               SIGN UP

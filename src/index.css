@@ -92,16 +92,24 @@ article {
   display: flex;
   border-radius: 2px;
 }
-.shipDetails {
+
+.mainDetails {
   display: flex;
-  flex-direction: column;
-  font-size: 12px;
+}
+
+.shipDetails {
+  flex: 1;
+  list-style-type: none;
+  padding: 2px;
+  font-size: 14px;
 }
 .shipDetailsList {
-  display: flex;
-  flex-direction: column;
+  flex: 1;
+  list-style-type: none;
+  padding: 2px;
   font-size: 12px;
 }
+
 button {
   font-size: 1em;
   font-weight: 700;
@@ -221,7 +229,7 @@ button.closeModal:hover {
   color: #b5f854;
 }
 
-.inputContainer {
+.form-group {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -238,6 +246,6 @@ button.closeModal:hover {
   transition: border-color 0.3s ease;
 }
 
-.inputValues:focus {
-  border-color: #b5f854;
+.error:focus {
+  border-color: red;
 }

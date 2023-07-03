@@ -1,10 +1,10 @@
 import { useContext } from "react";
 import { AuthContext } from "../contexts/AuthContext";
 
-const SignInModal = () => {
+const LogInModal = () => {
   const {
-    showSignInModal,
-    setShowSignInModal,
+    showLogInModal,
+    setShowLogInModal,
     email,
     setEmail,
     password,
@@ -16,7 +16,7 @@ const SignInModal = () => {
   } = useContext(AuthContext);
 
   const handleCloseClick = () => {
-    setShowSignInModal(false);
+    setShowLogInModal(false);
     setEmail("");
     setPassword("");
   };
@@ -33,16 +33,18 @@ const SignInModal = () => {
     e.preventDefault();
     setIsLoggedIn(true);
     handleSignIn();
+    localStorage.setItem("email", email);
+    localStorage.setItem("password", password);
   };
 
   return (
-    <div className={`modalOverlay ${showSignInModal ? "show" : ""}`}>
+    <div className={`modalOverlay ${showLogInModal ? "show" : ""}`}>
       <form className="modal" onSubmit={handleSubmit}>
         <button className="closeModal" onClick={handleCloseClick}>
           X
         </button>
         <div className="modalContent">
-          <h2>SIGN IN</h2>
+          <h2>LOG IN</h2>
           <div className={`form-group ${emailError ? "error" : ""}`}>
             <label>Email</label>
             <input
@@ -68,7 +70,7 @@ const SignInModal = () => {
             {passwordError && <p className="error">{passwordError}</p>}
           </div>
           <button className="moreInfo" type="submit">
-            CREATE ACCOUNT
+            SUBMIT
           </button>
         </div>
       </form>
@@ -76,4 +78,4 @@ const SignInModal = () => {
   );
 };
 
-export default SignInModal;
+export default LogInModal;

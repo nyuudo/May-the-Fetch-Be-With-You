@@ -31,13 +31,19 @@ export type StarshipsContextType = {
 
 // Type for the AuthContext CONTEXT values
 export type AuthContextType = {
+  showLogInModal: boolean;
+  setShowLogInModal: React.Dispatch<React.SetStateAction<boolean>>;
   showSignInModal: boolean;
   setShowSignInModal: React.Dispatch<React.SetStateAction<boolean>>;
   email: string;
   setEmail: React.Dispatch<React.SetStateAction<string>>;
   password: string;
   setPassword: React.Dispatch<React.SetStateAction<string>>;
+  setIsLoggedIn: React.Dispatch<React.SetStateAction<boolean>>;
   handleSignIn: () => void;
+  emailError: string;
+  passwordError: string;
+  isLoggedIn: boolean;
 };
 
 // Type for the PROPS that will be provided within the CONTEXT

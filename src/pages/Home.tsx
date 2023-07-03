@@ -2,9 +2,10 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../contexts/AuthContext";
 import SignInModal from "../components/SignInModal";
+import LogInModal from "../components/LogInModal";
 
 const Home = () => {
-  const { showSignInModal } = useContext(AuthContext);
+  const { showSignInModal, showLogInModal } = useContext(AuthContext);
   return (
     <div className="introHome">
       <h1 className="introText">
@@ -16,6 +17,7 @@ const Home = () => {
         </Link>
       </button>
       {showSignInModal ? <SignInModal /> : null}
+      {showLogInModal ? <LogInModal /> : null}
     </div>
   );
 };

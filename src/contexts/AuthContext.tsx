@@ -1,17 +1,24 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useEffect } from "react";
 import { AuthContextType, ProviderProps } from "../@types/starships";
 
 export const AuthContext = createContext<AuthContextType>({
+  showLogInModal: false,
+  setShowLogInModal: () => {},
   showSignInModal: false,
   setShowSignInModal: () => {},
   email: "",
   setEmail: () => {},
   password: "",
   setPassword: () => {},
+  setIsLoggedIn: () => {},
   handleSignIn: () => {},
+  emailError: "",
+  passwordError: "",
+  isLoggedIn: false,
 });
 
 export const AuthProvider = ({ children }: ProviderProps) => {
+  const [showLogInModal, setShowLogInModal] = useState(false);
   const [showSignInModal, setShowSignInModal] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -42,25 +49,37 @@ export const AuthProvider = ({ children }: ProviderProps) => {
     localStorage.setItem("isLoggedIn", "true");
     localStorage.setItem("email", email);
     localStorage.setItem("password", password);
+
+    setShowSignInModal(false);
+    setShowLogInModal(false);
   };
 
-  /* const handleSignOut = () => {
-    setIsLoggedIn(false);
-    localStorage.removeItem("isLoggedIn");
-    localStorage.removeItem("email");
-    localStorage.removeItem("password");
-  }; */
+  useEffect(() => {
+    const storedEmail = localStorage.getItem("email");
+    const storedPassword = localStorage.getItem("password");
+
+    if (storedEmail && storedPassword) {
+      setEmail(storedEmail);
+      setPassword(storedPassword);
+    }
+  }, []);
 
   return (
     <AuthContext.Provider
       value={{
+        showLogInModal,
+        setShowLogInModal,
         showSignInModal,
         setShowSignInModal,
         email,
         setEmail,
         password,
         setPassword,
+        setIsLoggedIn,
         handleSignIn,
+        emailError,
+        passwordError,
+        isLoggedIn,
       }}
     >
       {children}

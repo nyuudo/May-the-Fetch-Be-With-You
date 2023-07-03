@@ -22,22 +22,50 @@ const ShipCard = () => {
           e.currentTarget.src = `https://starwars-visualguide.com/assets/img/big-placeholder.jpg`;
         }}
       />
-      <ul className="shipDetails">
-        <li>Model: {currentShip.model}</li>
-        <li>Starship Class: {currentShip.starship_class}</li>
-        <li>Manufacturer: {currentShip.manufacturer}</li>
-        <li>Cost: {currentShip.cost_in_credits}</li>
-        <li>Crew: {currentShip.crew}</li>
-      </ul>
-      <ul className="shipDetailsList">
-        <li>Passenger Capacity: {currentShip.passengers}</li>
-        <li>Cargo Capacity: {currentShip.cargo_capacity}</li>
-        <li>Consumables: {currentShip.consumables}</li>
-        <li>Length: {currentShip.length}</li>
-        <li>Maximum Atmospheric Speed: {currentShip.max_atmosphering_speed}</li>
-        <li>Hyperdrive Rating: {currentShip.hyperdrive_rating}</li>
-        <li>Maximum Speed in RealSpace: {currentShip.MGLT}</li>
-      </ul>
+      <div className="mainDetails">
+        <ul className="shipDetails">
+          <li>
+            <strong>Model:</strong> {currentShip.model}
+          </li>
+          <li>
+            <strong>Starship Class:</strong> {currentShip.starship_class}
+          </li>
+          <li>
+            <strong>Manufacturer:</strong>
+            {currentShip.manufacturer}
+          </li>
+          <li>
+            <strong>Cost:</strong> {currentShip.cost_in_credits}
+          </li>
+          <li>
+            <strong>Crew:</strong> {currentShip.crew}
+          </li>
+        </ul>
+        <ul className="shipDetailsList">
+          <li>
+            <strong>Passenger Capacity:</strong> {currentShip.passengers}
+          </li>
+          <li>
+            <strong>Cargo Capacity:</strong> {currentShip.cargo_capacity}
+          </li>
+          <li>
+            <strong>Consumables:</strong> {currentShip.consumables}
+          </li>
+          <li>
+            <strong>Length:</strong> {currentShip.length}
+          </li>
+          <li>
+            <strong>Maximum Atmospheric Speed:</strong>
+            {currentShip.max_atmosphering_speed}
+          </li>
+          <li>
+            <strong>Hyperdrive Rating:</strong> {currentShip.hyperdrive_rating}
+          </li>
+          <li>
+            <strong>Maximum Speed in RealSpace:</strong> {currentShip.MGLT}
+          </li>
+        </ul>
+      </div>
     </div>
   );
 };
