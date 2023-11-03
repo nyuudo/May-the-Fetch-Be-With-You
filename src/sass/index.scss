@@ -1,0 +1,251 @@
+@import url("https://fonts.googleapis.com/css2?family=KoHo:wght@300;400;700&display=swap");
+:root {
+  font-family: "KoHo", sans-serif;
+  font-weight: 400;
+  color: #f1f1f1;
+  background-color: #111715;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+body {
+  margin: 0;
+}
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+header {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.brand {
+  max-height: 80px;
+  margin: 24px auto 34px;
+}
+.userAuth {
+  position: absolute;
+  right: 24px;
+}
+nav {
+  display: flex;
+  height: 38px;
+  border: 1px solid #7d8284;
+  justify-content: center;
+  align-items: center;
+}
+.linkRouter {
+  text-decoration: none;
+  color: inherit;
+}
+.introText {
+  color: #4bd5ee;
+  text-shadow: 0 0 0.2em #4bd5ee;
+}
+.introHome {
+  width: 50%;
+  padding-left: 1em;
+  margin: auto;
+}
+.loading {
+  color: #b5f854;
+  text-align: center;
+}
+main {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 8px;
+  gap: 8px;
+  align-content: flex-start;
+}
+.shipCards {
+  border-radius: 4px;
+  background-color: #1c2622;
+  display: flex;
+  flex-direction: column;
+  width: calc(49% - 8px);
+  margin: auto;
+  padding: 8px;
+  align-content: flex-start;
+}
+article {
+  display: flex;
+  flex-direction: column;
+}
+.shipInfo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.shipName {
+  color: #7d8284;
+  font-weight: 700;
+}
+.shipModel {
+  color: #4bd5ee;
+}
+.shipImage {
+  display: flex;
+  border-radius: 2px;
+}
+
+.mainDetails {
+  display: flex;
+}
+
+.shipDetails {
+  flex: 1;
+  list-style-type: none;
+  padding: 2px;
+  font-size: 14px;
+}
+.shipDetailsList {
+  flex: 1;
+  list-style-type: none;
+  padding: 2px;
+  font-size: 12px;
+}
+
+button {
+  font-size: 1em;
+  font-weight: 700;
+  font-family: inherit;
+  color: #7d8284;
+  border: none;
+  border-top: none;
+  border-right: 1px solid #7d8284;
+  border-bottom: none;
+  border-left: 1px solid #7d8284;
+  transition: 0.25s;
+  background: none;
+  padding: 6px 24px;
+}
+button:hover {
+  color: #f1f1f1;
+  border-bottom: 4px solid #b5f854;
+}
+button.moreInfo {
+  color: #7d8284;
+  background: linear-gradient(
+    0deg,
+    rgba(17, 23, 21, 1) 0%,
+    rgba(28, 38, 34, 1) 100%
+  );
+  border: none;
+  transition: 0.25s;
+  border-radius: 2px;
+}
+button.moreInfo:hover {
+  color: #b5f854;
+  background: linear-gradient(
+    0deg,
+    rgba(17, 23, 21, 1) 0%,
+    rgba(28, 38, 34, 1) 100%
+  );
+}
+.menuItems {
+  padding: 8px;
+  margin-top: 8px;
+  margin-bottom: 2px;
+  border: 1px solid;
+}
+
+button.loginSignin {
+  color: #7d8284;
+  background: none;
+  border: none;
+  transition: 0.25s;
+}
+button.loginSignin:hover {
+  color: #b5f854;
+}
+
+.menuItems {
+  padding: 8px;
+  margin-top: 8px;
+  margin-bottom: 2px;
+  border: 1px solid;
+}
+
+span {
+  color: #b5b7b7;
+  fill: #b5b7b7;
+}
+span:after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  transition: all 0.25s;
+  box-shadow: 0px 0px 4px 1px #fade4b;
+  border-radius: 4px;
+  margin-top: 10px;
+  margin-bottom: 1px;
+}
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 9999;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #1c2622;
+  padding: 64px;
+  border-radius: 4px;
+}
+
+.modalContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+button.closeModal {
+  color: #7d8284;
+  font-weight: 700;
+  font-size: 2em;
+  background: none;
+  border: none;
+  transition: 0.25s;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
+
+button.closeModal:hover {
+  color: #b5f854;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 16px;
+  gap: 16px;
+}
+
+.inputValues {
+  background-color: #b5b7b7;
+  border-radius: 2px;
+  border: none;
+  line-height: 32px;
+  padding: 0 16px;
+  transition: border-color 0.3s ease;
+}
+
+.error:focus {
+  border-color: red;
+}
