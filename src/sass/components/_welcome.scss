@@ -1,0 +1,34 @@
+@use "../base";
+
+.welcome-container {
+  display: flex;
+  justify-content: center;
+  //align-items: center;
+}
+
+.welcome {
+  display: flex;
+  flex-direction: column;
+  //justify-content: center;
+  //align-items: center;
+  gap: 3rem;
+}
+
+.introText {
+  color: base.$highlight-color;
+  text-shadow: 0 0 0.5rem base.$highlight-color;
+  width: auto;
+  padding-left: 1rem;
+  margin: auto;
+}
+
+.welcome-button {
+  text-decoration: none;
+  color: base.$primary-color;
+  padding: 8px;
+  transition: 0.25s;
+}
+
+.welcome-button:hover {
+  color: base.$hover-color;
+}

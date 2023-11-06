@@ -38,7 +38,9 @@ const MainContent = () => {
                   <p className="shipName">{ship.name.toUpperCase()}</p>
                   <p className="shipModel">{ship.model}</p>
                 </div>
-                {selectedShip === ship.name ? <ShipCard /> : null}
+                {selectedShip === ship.name ? (
+                  <ShipCard key={ship.name} />
+                ) : null}
                 <button
                   className="moreInfo"
                   onClick={() => handleToggleShipCard(ship.name)}

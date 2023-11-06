@@ -1,0 +1,26 @@
+@use "../base";
+header {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.brand {
+  max-height: 80px;
+  margin: 24px auto 34px;
+}
+.userAuth {
+  display: flex;
+  gap: 1rem;
+  position: absolute;
+  right: 24px;
+}
+
+button.loginSignin {
+  color: base.$secondary-color;
+  background: none;
+  border: none;
+  transition: 0.25s;
+}
+button.loginSignin:hover {
+  color: base.$hover-color;
+}

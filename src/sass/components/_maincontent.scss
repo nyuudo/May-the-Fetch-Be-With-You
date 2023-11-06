@@ -1,0 +1,59 @@
+@use "../base";
+
+.loading {
+  color: base.$hover-color;
+  text-align: center;
+}
+main {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 8px;
+  gap: 8px;
+  align-content: flex-start;
+}
+.shipCards {
+  border-radius: 4px;
+  background-color: base.$tertiary-color;
+  display: flex;
+  flex-direction: column;
+  width: calc(49% - 8px);
+  margin: auto;
+  padding: 8px;
+  align-content: flex-start;
+}
+article {
+  display: flex;
+  flex-direction: column;
+}
+.shipInfo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.shipName {
+  color: base.$secondary-color;
+  font-weight: 700;
+}
+.shipModel {
+  color: base.$highlight-color;
+}
+
+button {
+  border: none;
+}
+
+/* button {
+  color: base.$secondary-color;
+  border: none;
+  border-top: none;
+  border-right: 1px solid base.$secondary-color;
+  border-bottom: none;
+  border-left: 1px solid base.$secondary-color;
+  transition: 0.25s;
+  background: none;
+  padding: 6px 24px;
+} */
+/* button:hover {
+  color: base.$primary-color;
+} */

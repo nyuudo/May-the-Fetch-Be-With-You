@@ -1,0 +1,35 @@
+@use "../base";
+
+.shipImage {
+  display: flex;
+  border-radius: 2px;
+}
+
+.mainDetails {
+  display: flex;
+}
+
+.shipDetails {
+  flex: 1;
+  list-style-type: none;
+  padding: 2px;
+  font-size: 14px;
+}
+.shipDetailsList {
+  flex: 1;
+  list-style-type: none;
+  padding: 2px;
+  font-size: 12px;
+}
+
+.moreInfo {
+  color: base.$secondary-color;
+  background: base.$gradient-color;
+  border: none;
+  transition: 0.25s;
+  border-radius: 2px;
+}
+.moreInfo:hover {
+  color: base.$hover-color;
+  background: base.$gradient-color;
+}

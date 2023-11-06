@@ -1,0 +1,56 @@
+@use "../base";
+.form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 16px;
+  gap: 16px;
+}
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 9999;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: base.$tertiary-color;
+  padding: 64px;
+  border-radius: 4px;
+}
+
+.modalContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.closeButton {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  background-color: currentColor;
+  --svg: url("../assets/light-sabers.svg");
+  -webkit-mask-image: var(--svg);
+  mask-image: var(--svg);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  transition-duration: 0.4s;
+  position: absolute;
+  top: 16px;
+  right: 16px;
+
+  .closeButton:hover {
+    background-color: base.$hover-color;
+  }
+}

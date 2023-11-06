@@ -4,12 +4,12 @@ const Nav = () => {
   return (
     <nav>
       <button>
-        <Link to="/" className="linkRouter">
+        <Link to="/" className="navLink">
           HOME
         </Link>
       </button>
       <button>
-        <Link to="/starships" className="linkRouter">
+        <Link to="/starships" className="navLink">
           STARSHIPS
         </Link>
       </button>

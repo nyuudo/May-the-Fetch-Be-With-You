@@ -1,0 +1,60 @@
+@use "../base";
+nav {
+  display: flex;
+  height: 38px;
+  border-top: 1px solid base.$secondary-color;
+  border-bottom: 1px solid base.$secondary-color;
+  justify-content: center;
+  gap: 1rem;
+}
+.navLink {
+  position: relative;
+  text-decoration: none;
+  height: 38px;
+  color: base.$light-color;
+  background: transparent;
+}
+
+.navLink::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  transition: all 0.25s;
+  box-shadow: 0px 0px 4px 1px base.$hover-color;
+  opacity: 0;
+}
+
+.navLink:hover::after {
+  opacity: 1;
+}
+
+/* .menuItems {
+  padding: 8px;
+  margin-top: 8px;
+  margin-bottom: 2px;
+  border: 1px solid;
+}
+
+.menuItems {
+  padding: 8px;
+  margin-top: 8px;
+  margin-bottom: 2px;
+  border: 1px solid;
+}
+
+.inputValues {
+  background-color: base.$light-color;
+  border-radius: 2px;
+  border: none;
+  line-height: 32px;
+  padding: 0 16px;
+  transition: border-color 0.3s ease;
+}
+
+.error:focus {
+  border-color: base.$danger-color;
+}
+ */

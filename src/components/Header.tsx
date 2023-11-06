@@ -24,7 +24,6 @@ const Header = () => {
             <button className="loginSignin" onClick={handlesLoginClick}>
               LOG IN
             </button>
-            //
             <button className="loginSignin" onClick={handleSignUpClick}>
               SIGN UP
             </button>
