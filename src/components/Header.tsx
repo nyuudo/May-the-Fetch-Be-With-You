@@ -5,11 +5,7 @@ import { useLocation } from "react-router";
 
 const Header = () => {
   const location = useLocation();
-  const { setShowSignInModal, setShowLogInModal } = useContext(AuthContext);
-
-  const handlesLoginClick = () => {
-    setShowLogInModal(true);
-  };
+  const { setShowSignInModal } = useContext(AuthContext);
 
   const handleSignUpClick = () => {
     setShowSignInModal(true);
@@ -18,18 +14,13 @@ const Header = () => {
   return (
     <header>
       <img className="brand" src={starwars} alt="brand" />
-      <div className="userAuth">
-        {location.pathname !== "/starships" && (
-          <>
-            <button className="loginSignin" onClick={handlesLoginClick}>
-              LOG IN
-            </button>
-            <button className="loginSignin" onClick={handleSignUpClick}>
-              SIGN UP
-            </button>
-          </>
-        )}
-      </div>
+      {location.pathname !== "/starships" && (
+        <>
+          <button className="loginSignin" onClick={handleSignUpClick}>
+            SIGN UP
+          </button>
+        </>
+      )}
     </header>
   );
 };

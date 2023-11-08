@@ -1,4 +1,5 @@
 @use "../base";
+@use "../base/breakpoints";
 
 .loading {
   color: base.$hover-color;
@@ -7,53 +8,57 @@
 main {
   display: flex;
   flex-wrap: wrap;
-  margin: 8px;
-  gap: 8px;
-  align-content: flex-start;
+  gap: 0.5rem;
+
+  @include breakpoints.xs {
+    margin: 1rem 1.25rem;
+  }
+
+  @include breakpoints.sm {
+    margin: 1rem 2.5rem;
+  }
+
+  @include breakpoints.md {
+    margin: 1rem 3.75rem;
+  }
+
+  @include breakpoints.lg {
+    margin: 1rem 3.75rem;
+  }
+
+  @include breakpoints.xl {
+    margin: 1rem 5rem;
+  }
+
+  @include breakpoints.xxl {
+    margin: 1rem 6rem;
+  }
 }
 .shipCards {
+  width: 100%;
   border-radius: 4px;
   background-color: base.$tertiary-color;
-  display: flex;
-  flex-direction: column;
-  width: calc(49% - 8px);
+  padding: 0.5rem;
   margin: auto;
-  padding: 8px;
-  align-content: flex-start;
-}
-article {
   display: flex;
   flex-direction: column;
+
+  @include breakpoints.md {
+    width: calc(50% - 0.5rem);
+  }
 }
 .shipInfo {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
+  //align-items: center;
+  //justify-content: center;
+  gap: 0.5rem;
 }
 .shipName {
   color: base.$secondary-color;
+  font-size: 0.875rem;
   font-weight: 700;
 }
 .shipModel {
   color: base.$highlight-color;
+  font-size: 0.75rem;
 }
-
-button {
-  border: none;
-}
-
-/* button {
-  color: base.$secondary-color;
-  border: none;
-  border-top: none;
-  border-right: 1px solid base.$secondary-color;
-  border-bottom: none;
-  border-left: 1px solid base.$secondary-color;
-  transition: 0.25s;
-  background: none;
-  padding: 6px 24px;
-} */
-/* button:hover {
-  color: base.$primary-color;
-} */

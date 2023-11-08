@@ -118,6 +118,12 @@ h1 {
   line-height: 1.1;
 }
 
+h2 {
+  font-family: "KoHo", sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
 p {
   font-family: "Comme", sans-serif;
   font-size: 1rem;
@@ -128,44 +134,98 @@ button {
   font-size: 1rem;
   font-weight: 700;
   background: none;
+  border: none;
 }
 
 .welcome-container {
   display: flex;
-  justify-content: center;
-}
-
-.welcome {
-  display: flex;
   flex-direction: column;
-  gap: 3rem;
+  align-content: flex-start;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+@media (min-width: 23.4375rem) {
+  .welcome-container {
+    margin: 0 1.25rem;
+  }
+}
+@media (min-width: 40rem) {
+  .welcome-container {
+    margin: 0 2.5rem;
+  }
+}
+@media (min-width: 48rem) {
+  .welcome-container {
+    margin: 0 3.75rem;
+  }
+}
+@media (min-width: 64rem) {
+  .welcome-container {
+    margin: 0 3.75rem;
+  }
+}
+@media (min-width: 80rem) {
+  .welcome-container {
+    margin: 0 5rem;
+  }
+}
+@media (min-width: 96rem) {
+  .welcome-container {
+    margin: 0 6rem;
+  }
 }
 
 .introText {
   color: rgb(75, 213, 238);
+  max-width: 31rem;
+  margin-top: 3rem;
   text-shadow: 0 0 0.5rem rgb(75, 213, 238);
-  width: auto;
-  padding-left: 1rem;
-  margin: auto;
+}
+@media (min-width: 23.4375rem) {
+  .introText {
+    font-size: 2rem;
+  }
+}
+@media (min-width: 40rem) {
+  .introText {
+    font-size: 2rem;
+  }
+}
+@media (min-width: 48rem) {
+  .introText {
+    font-size: 2.5rem;
+  }
+}
+@media (min-width: 64rem) {
+  .introText {
+    font-size: 3rem;
+  }
+}
+@media (min-width: 80rem) {
+  .introText {
+    font-size: 3rem;
+  }
+}
+@media (min-width: 96rem) {
+  .introText {
+    font-size: 3rem;
+  }
 }
 
 .welcome-button {
   text-decoration: none;
+  font-weight: 700;
+  padding: 1rem 2rem;
+  border-radius: 8px;
   color: rgb(241, 241, 241);
-  padding: 8px;
+  background-color: rgb(28, 38, 34);
   transition: 0.25s;
 }
 
 .welcome-button:hover {
-  color: rgb(181, 248, 84);
-}
-
-.form-group {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 16px;
-  gap: 16px;
+  color: rgb(28, 38, 34);
+  background-color: rgb(181, 248, 84);
 }
 
 .modalOverlay {
@@ -174,8 +234,16 @@ button {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(7, 23, 21, 0.7);
   z-index: 9999;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 16px;
+  gap: 6px;
 }
 
 .modal {
@@ -183,9 +251,18 @@ button {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: rgb(28, 38, 34);
-  padding: 64px;
-  border-radius: 4px;
+  background-color: rgb(241, 241, 241);
+  padding: 32px;
+  border-radius: 8px;
+}
+.modal h2 {
+  color: rgb(125, 130, 132);
+  margin: 8px;
+  padding: 8px;
+}
+.modal label {
+  color: rgb(181, 183, 183);
+  font-size: 0.75rem;
 }
 
 .modalContent {
@@ -198,7 +275,7 @@ button {
   display: inline-block;
   width: 32px;
   height: 32px;
-  background-color: currentColor;
+  background-color: rgb(181, 183, 183);
   --svg: url("../assets/light-sabers.svg");
   -webkit-mask-image: var(--svg);
   mask-image: var(--svg);
@@ -211,8 +288,39 @@ button {
   top: 16px;
   right: 16px;
 }
-.closeButton .closeButton:hover {
-  background-color: rgb(181, 248, 84);
+.closeButton:hover {
+  background-color: rgb(28, 38, 34);
+  scale: 0.9;
+  cursor: pointer;
+}
+
+.inputValues {
+  background-color: rgb(181, 183, 183);
+  border-radius: 2px;
+  border: none;
+  line-height: 32px;
+  padding: 0 16px;
+  transition: border-color 0.3s ease;
+}
+
+.modalButton {
+  color: rgb(181, 248, 84);
+  background: rgb(28, 38, 34);
+  box-shadow: 2px 2px 2px 1px rgba(7, 23, 21, 0.7);
+  border: none;
+  transition: 0.25s;
+  border-radius: 4px;
+  padding: 8px 16px;
+}
+.modalButton:hover {
+  color: rgb(28, 38, 34);
+  background: rgb(181, 248, 84);
+  box-shadow: none;
+}
+
+.error {
+  font-size: 0.75rem;
+  color: rgb(245, 59, 87);
 }
 
 header {
@@ -220,27 +328,112 @@ header {
   align-items: center;
   position: relative;
 }
+@media (min-width: 23.4375rem) {
+  header {
+    margin: 0 1.25rem;
+    flex-direction: column;
+  }
+}
+@media (min-width: 40rem) {
+  header {
+    margin: 0 2.5rem;
+    flex-direction: column;
+  }
+}
+@media (min-width: 48rem) {
+  header {
+    margin: 0 3.75rem;
+    flex-direction: row;
+  }
+}
+@media (min-width: 64rem) {
+  header {
+    margin: 0 3.75rem;
+    flex-direction: row;
+  }
+}
+@media (min-width: 80rem) {
+  header {
+    margin: 0 5rem;
+    flex-direction: row;
+  }
+}
+@media (min-width: 96rem) {
+  header {
+    margin: 0 6rem;
+    flex-direction: row;
+  }
+}
 
 .brand {
   max-height: 80px;
-  margin: 24px auto 34px;
+  margin: 1rem auto;
 }
 
-.userAuth {
-  display: flex;
-  gap: 1rem;
-  position: absolute;
-  right: 24px;
-}
-
-button.loginSignin {
+.loginSignin {
   color: rgb(125, 130, 132);
   background: none;
   border: none;
   transition: 0.25s;
 }
-
-button.loginSignin:hover {
+@media (min-width: 23.4375rem) {
+  .loginSignin {
+    position: relative;
+    margin: 1rem;
+  }
+}
+@media (min-width: 40rem) {
+  .loginSignin {
+    position: relative;
+    margin: 1rem;
+  }
+}
+@media (min-width: 48rem) {
+  .loginSignin {
+    position: absolute;
+    right: 0;
+    margin: 0px;
+  }
+}
+@media (min-width: 64rem) {
+  .loginSignin {
+    position: absolute;
+    right: 0;
+    margin: 0px;
+  }
+}
+@media (min-width: 80rem) {
+  .loginSignin {
+    position: absolute;
+    right: 0;
+    margin: 0px;
+  }
+}
+@media (min-width: 96rem) {
+  .loginSignin {
+    position: absolute;
+    right: 0;
+    margin: 0px;
+  }
+}
+.loginSignin::before {
+  content: "";
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+  background-color: currentColor;
+  --svg: url("../assets/rebel-user.svg");
+  -webkit-mask-image: var(--svg);
+  mask-image: var(--svg);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  transition-duration: 0.4s;
+  vertical-align: bottom;
+}
+.loginSignin:hover {
   color: rgb(181, 248, 84);
 }
 
@@ -250,7 +443,6 @@ nav {
   border-top: 1px solid rgb(125, 130, 132);
   border-bottom: 1px solid rgb(125, 130, 132);
   justify-content: center;
-  gap: 1rem;
 }
 
 .navLink {
@@ -259,6 +451,8 @@ nav {
   height: 38px;
   color: rgb(181, 183, 183);
   background: transparent;
+  padding-left: 18px;
+  padding-right: 18px;
 }
 
 .navLink::after {
@@ -267,7 +461,7 @@ nav {
   bottom: -8px;
   left: 0;
   width: 100%;
-  height: 1px;
+  height: 0px;
   transition: all 0.25s;
   box-shadow: 0px 0px 4px 1px rgb(181, 248, 84);
   opacity: 0;
@@ -277,33 +471,6 @@ nav {
   opacity: 1;
 }
 
-/* .menuItems {
-  padding: 8px;
-  margin-top: 8px;
-  margin-bottom: 2px;
-  border: 1px solid;
-}
-
-.menuItems {
-  padding: 8px;
-  margin-top: 8px;
-  margin-bottom: 2px;
-  border: 1px solid;
-}
-
-.inputValues {
-  background-color: base.$light-color;
-  border-radius: 2px;
-  border: none;
-  line-height: 32px;
-  padding: 0 16px;
-  transition: border-color 0.3s ease;
-}
-
-.error:focus {
-  border-color: base.$danger-color;
-}
- */
 .loading {
   color: rgb(181, 248, 84);
   text-align: center;
@@ -312,88 +479,108 @@ nav {
 main {
   display: flex;
   flex-wrap: wrap;
-  margin: 8px;
-  gap: 8px;
-  align-content: flex-start;
+  gap: 0.5rem;
+}
+@media (min-width: 23.4375rem) {
+  main {
+    margin: 1rem 1.25rem;
+  }
+}
+@media (min-width: 40rem) {
+  main {
+    margin: 1rem 2.5rem;
+  }
+}
+@media (min-width: 48rem) {
+  main {
+    margin: 1rem 3.75rem;
+  }
+}
+@media (min-width: 64rem) {
+  main {
+    margin: 1rem 3.75rem;
+  }
+}
+@media (min-width: 80rem) {
+  main {
+    margin: 1rem 5rem;
+  }
+}
+@media (min-width: 96rem) {
+  main {
+    margin: 1rem 6rem;
+  }
 }
 
 .shipCards {
+  width: 100%;
   border-radius: 4px;
   background-color: rgb(28, 38, 34);
-  display: flex;
-  flex-direction: column;
-  width: calc(49% - 8px);
+  padding: 0.5rem;
   margin: auto;
-  padding: 8px;
-  align-content: flex-start;
-}
-
-article {
   display: flex;
   flex-direction: column;
+}
+@media (min-width: 48rem) {
+  .shipCards {
+    width: calc(50% - 0.5rem);
+  }
 }
 
 .shipInfo {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
+  gap: 0.5rem;
 }
 
 .shipName {
   color: rgb(125, 130, 132);
+  font-size: 0.875rem;
   font-weight: 700;
 }
 
 .shipModel {
   color: rgb(75, 213, 238);
+  font-size: 0.75rem;
 }
 
-button {
-  border: none;
-}
-
-/* button {
-  color: base.$secondary-color;
-  border: none;
-  border-top: none;
-  border-right: 1px solid base.$secondary-color;
-  border-bottom: none;
-  border-left: 1px solid base.$secondary-color;
-  transition: 0.25s;
-  background: none;
-  padding: 6px 24px;
-} */
-/* button:hover {
-  color: base.$primary-color;
-} */
 .shipImage {
   display: flex;
-  border-radius: 2px;
+  width: 100%;
+  border-radius: 4px;
+  margin: 1rem 0rem;
 }
 
 .mainDetails {
   display: flex;
+  color: rgb(241, 241, 241);
+  font-size: 0.75rem;
+  gap: 1rem;
 }
 
 .shipDetails {
   flex: 1;
   list-style-type: none;
   padding: 2px;
-  font-size: 14px;
+  font-size: 0.75rem;
+  line-height: 1.25rem;
 }
 
 .shipDetailsList {
+  color: rgb(181, 183, 183);
   flex: 1;
   list-style-type: none;
   padding: 2px;
-  font-size: 12px;
+  font-weight: 300;
+  font-size: 0.75rem;
+  line-height: 1rem;
 }
 
 .moreInfo {
   color: rgb(125, 130, 132);
   background: linear-gradient(0deg, rgb(17, 23, 21) 0%, rgb(28, 38, 34) 100%);
   border: none;
+  margin: 0.25rem 0.25rem;
+  padding: 0.5rem 0.25rem;
   transition: 0.25s;
   border-radius: 2px;
 }

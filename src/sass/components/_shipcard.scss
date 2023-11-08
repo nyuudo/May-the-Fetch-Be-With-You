@@ -2,30 +2,41 @@
 
 .shipImage {
   display: flex;
-  border-radius: 2px;
+  width: 100%;
+  border-radius: 4px;
+  margin: 1rem 0rem;
 }
 
 .mainDetails {
   display: flex;
+  color: base.$primary-color;
+  font-size: 0.75rem;
+  gap: 1rem;
 }
 
 .shipDetails {
   flex: 1;
   list-style-type: none;
   padding: 2px;
-  font-size: 14px;
+  font-size: 0.75rem;
+  line-height: 1.25rem;
 }
 .shipDetailsList {
+  color: base.$light-color;
   flex: 1;
   list-style-type: none;
   padding: 2px;
-  font-size: 12px;
+  font-weight: 300;
+  font-size: 0.75rem;
+  line-height: 1rem;
 }
 
 .moreInfo {
   color: base.$secondary-color;
   background: base.$gradient-color;
   border: none;
+  margin: 0.25rem 0.25rem;
+  padding: 0.5rem 0.25rem;
   transition: 0.25s;
   border-radius: 2px;
 }

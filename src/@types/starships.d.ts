@@ -31,8 +31,6 @@ export type StarshipsContextType = {
 
 // Type for the AuthContext CONTEXT values
 export type AuthContextType = {
-  showLogInModal: boolean;
-  setShowLogInModal: React.Dispatch<React.SetStateAction<boolean>>;
   showSignInModal: boolean;
   setShowSignInModal: React.Dispatch<React.SetStateAction<boolean>>;
   email: string;

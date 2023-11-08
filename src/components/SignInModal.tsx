@@ -65,7 +65,7 @@ const SignInModal = () => {
             />
             {passwordError && <p className="error">{passwordError}</p>}
           </div>
-          <button className="moreInfo" type="submit">
+          <button className="modalButton" type="submit">
             CREATE ACCOUNT
           </button>
         </div>

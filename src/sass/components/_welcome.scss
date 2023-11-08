@@ -1,34 +1,80 @@
 @use "../base";
-
+@use "../base/breakpoints";
 .welcome-container {
   display: flex;
-  justify-content: center;
-  //align-items: center;
-}
-
-.welcome {
-  display: flex;
   flex-direction: column;
-  //justify-content: center;
-  //align-items: center;
-  gap: 3rem;
+  align-content: flex-start;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+
+  @include breakpoints.xs {
+    margin: 0 1.25rem;
+  }
+
+  @include breakpoints.sm {
+    margin: 0 2.5rem;
+  }
+
+  @include breakpoints.md {
+    margin: 0 3.75rem;
+  }
+
+  @include breakpoints.lg {
+    margin: 0 3.75rem;
+  }
+
+  @include breakpoints.xl {
+    margin: 0 5rem;
+  }
+
+  @include breakpoints.xxl {
+    margin: 0 6rem;
+  }
 }
 
 .introText {
   color: base.$highlight-color;
+  max-width: 31rem;
+  margin-top: 3rem;
   text-shadow: 0 0 0.5rem base.$highlight-color;
-  width: auto;
-  padding-left: 1rem;
-  margin: auto;
+
+  @include breakpoints.xs {
+    font-size: 2rem;
+  }
+
+  @include breakpoints.sm {
+    font-size: 2rem;
+  }
+
+  @include breakpoints.md {
+    font-size: 2.5rem;
+  }
+
+  @include breakpoints.lg {
+    font-size: 3rem;
+  }
+
+  @include breakpoints.xl {
+    font-size: 3rem;
+  }
+
+  @include breakpoints.xxl {
+    font-size: 3rem;
+  }
 }
 
 .welcome-button {
   text-decoration: none;
+  font-weight: 700;
+  padding: 1rem 2rem;
+  border-radius: 8px;
   color: base.$primary-color;
-  padding: 8px;
+  background-color: base.$tertiary-color;
   transition: 0.25s;
 }
 
 .welcome-button:hover {
-  color: base.$hover-color;
+  color: base.$tertiary-color;
+  background-color: base.$hover-color;
 }
