@@ -8,6 +8,7 @@
 main {
   display: flex;
   flex-wrap: wrap;
+
   gap: 0.5rem;
 
   @include breakpoints.xs {
@@ -49,13 +50,19 @@ main {
 }
 .shipInfo {
   display: flex;
-  //align-items: center;
-  //justify-content: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   gap: 0.5rem;
+
+  @include breakpoints.md {
+    flex-direction: row;
+  }
 }
 .shipName {
-  color: base.$secondary-color;
-  font-size: 0.875rem;
+  font-family: base.$secondary-font;
+  color: base.$light-color;
+  font-size: 0.8rem;
   font-weight: 700;
 }
 .shipModel {

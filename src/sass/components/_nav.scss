@@ -2,7 +2,7 @@
 @use "../base/breakpoints";
 nav {
   display: flex;
-  height: 38px;
+  min-height: 38px;
   border-top: 1px solid base.$secondary-color;
   border-bottom: 1px solid base.$secondary-color;
   justify-content: center;

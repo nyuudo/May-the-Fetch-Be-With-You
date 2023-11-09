@@ -25,7 +25,11 @@ const MainContent = () => {
         pageStart={0}
         loadMore={loadMoreStarships}
         hasMore={hasMore}
-        loader={<p className="loading">Loading More...</p>}
+        loader={
+          <p className="loading" key={0}>
+            Loading More...
+          </p>
+        }
       >
         {error ? <p>{error}</p> : null}
         {loading ? (
