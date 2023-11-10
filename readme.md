@@ -4,4 +4,4 @@
 
 A simple web project that collects data from a Star Wars themed API.
 
-I repurposed this small project to practice typescript, fetching data, state management and testing in REACT.
+I repurposed this small project to practice typescript, fetching data, state management and unit testing in REACT.

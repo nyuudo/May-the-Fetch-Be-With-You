@@ -1,6 +1,5 @@
 import { useContext } from "react";
 import { StarshipsContext } from "../contexts/StarshipsContext";
-// include a component to implement the functionality of infinite scrolling
 import InfiniteScroll from "react-infinite-scroller";
 import ShipCard from "./ShipCard";
 
