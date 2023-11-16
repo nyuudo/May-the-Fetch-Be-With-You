@@ -13,6 +13,8 @@ export const AuthContext = createContext<AuthContextType>({
   emailError: "",
   passwordError: "",
   isLoggedIn: false,
+  setShowMessage: () => {},
+  showMessage: false,
 });
 
 export const AuthProvider = ({ children }: ProviderProps) => {
@@ -20,6 +22,7 @@ export const AuthProvider = ({ children }: ProviderProps) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [showMessage, setShowMessage] = useState(false);
   const [emailError, setEmailError] = useState("");
   const [passwordError, setPasswordError] = useState("");
 
@@ -74,6 +77,8 @@ export const AuthProvider = ({ children }: ProviderProps) => {
         emailError,
         passwordError,
         isLoggedIn,
+        setShowMessage,
+        showMessage,
       }}
     >
       {children}

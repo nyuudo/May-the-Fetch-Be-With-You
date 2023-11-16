@@ -226,18 +226,28 @@ button {
 }
 
 .welcome-button {
-  text-decoration: none;
+  display: inline-block;
   font-weight: 700;
   padding: 1rem 2rem;
   border-radius: 8px;
-  color: rgb(241, 241, 241);
   background-color: rgb(28, 38, 34);
   transition: 0.25s;
+  cursor: pointer;
+}
+.welcome-button a {
+  display: block;
+  text-decoration: none;
+  color: rgb(241, 241, 241);
+}
+.welcome-button:hover, .welcome-button:focus {
+  background-color: rgb(181, 248, 84);
+}
+.welcome-button:hover a, .welcome-button:focus a {
+  color: rgb(28, 38, 34);
 }
 
-.welcome-button:hover {
-  color: rgb(28, 38, 34);
-  background-color: rgb(181, 248, 84);
+.warning-message {
+  color: rgb(245, 59, 87);
 }
 
 .modalOverlay {
@@ -600,7 +610,7 @@ main {
   color: rgb(125, 130, 132);
   background: linear-gradient(0deg, rgb(17, 23, 21) 0%, rgb(28, 38, 34) 100%);
   border: none;
-  margin: 0.25rem 0.25rem;
+  margin: 0.75rem 0.25rem 0.25rem 0.25rem;
   padding: 0.5rem 0.25rem;
   transition: 0.25s;
   border-radius: 2px;
@@ -608,8 +618,8 @@ main {
 }
 
 .moreInfo:hover {
-  color: rgb(181, 248, 84);
-  background: rgb(28, 38, 34);
+  color: rgb(28, 38, 34);
+  background: rgb(181, 248, 84);
 }
 
 :root {

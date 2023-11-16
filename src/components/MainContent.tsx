@@ -26,13 +26,13 @@ const MainContent = () => {
         hasMore={hasMore}
         loader={
           <p className="loading" key={0}>
-            Loading More...
+            Loading more, it is...
           </p>
         }
       >
         {error ? <p>{error}</p> : null}
         {loading ? (
-          <p className="loading">Loading Data...</p>
+          <p className="loading">Loading Data it is...</p>
         ) : (
           <main>
             {starShips.map((ship) => (

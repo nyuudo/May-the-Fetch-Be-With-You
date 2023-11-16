@@ -1,8 +1,9 @@
-import { rest } from "msw";
+// updated syntax for MSW 2.0
+import { http, HttpResponse } from "msw";
 import { mockStarshipResponse } from "./mockStarshipResponse";
 
 export const handlers = [
-  rest.get("https://swapi.dev/api/starships/", (req, res, ctx) => {
-    return res(ctx.status(200), ctx.json(mockStarshipResponse));
+  http.get("https://swapi.dev/api/starships/", () => {
+    return HttpResponse.json(mockStarshipResponse);
   }),
 ];

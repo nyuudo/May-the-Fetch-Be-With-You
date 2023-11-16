@@ -83,16 +83,29 @@
 }
 
 .welcome-button {
-  text-decoration: none;
+  display: inline-block;
   font-weight: 700;
   padding: 1rem 2rem;
   border-radius: 8px;
-  color: base.$primary-color;
   background-color: base.$tertiary-color;
   transition: 0.25s;
+  cursor: pointer;
+
+  a {
+    display: block;
+    text-decoration: none;
+    color: base.$primary-color;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: base.$hover-color;
+    a {
+      color: base.$tertiary-color;
+    }
+  }
 }
 
-.welcome-button:hover {
-  color: base.$tertiary-color;
-  background-color: base.$hover-color;
+.warning-message {
+  color: base.$danger-color;
 }

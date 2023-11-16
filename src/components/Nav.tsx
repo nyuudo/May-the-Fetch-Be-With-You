@@ -1,6 +1,10 @@
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "../contexts/AuthContext";
 
 const Nav = () => {
+  const { setShowMessage } = useContext(AuthContext);
+
   return (
     <nav>
       <button>
@@ -8,7 +12,7 @@ const Nav = () => {
           HOME
         </Link>
       </button>
-      <button>
+      <button onClick={() => setShowMessage(true)}>
         <Link to="/starships" className="navLink">
           STARSHIPS
         </Link>

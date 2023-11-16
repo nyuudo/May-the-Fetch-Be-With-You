@@ -12,7 +12,7 @@ describe("Nav component test", () => {
     expect(screen.getByRole("navigation")).toBeDefined();
     expect(screen.getAllByRole("button")).toHaveLength(2);
   });
-  test("should display the navigation bar correctly on different screen sizes", () => {
+  test("should display the navigation bar", () => {
     render(
       <Router>
         <Nav />
