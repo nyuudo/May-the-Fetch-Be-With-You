@@ -28,6 +28,7 @@ describe("Header Component Test", () => {
     const mockSetPassword = jest.fn();
     const mockSetIsLoggedIn = jest.fn();
     const mockHandleSignIn = jest.fn();
+    const mockHandleMessage = jest.fn();
     render(
       <Router>
         <AuthContext.Provider
@@ -43,6 +44,8 @@ describe("Header Component Test", () => {
             emailError: "",
             passwordError: "",
             isLoggedIn: false,
+            setShowMessage: mockHandleMessage,
+            showMessage: false,
           }}
         >
           <Header />
