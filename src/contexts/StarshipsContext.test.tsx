@@ -1,21 +1,16 @@
-import { render } from "@testing-library/react";
-import { StarshipsProvider, StarshipsContext } from "./StarshipsContext";
+import { render, screen } from "@testing-library/react";
+import { StarshipsProvider } from "./StarshipsContext";
+import { BrowserRouter as Router } from "react-router-dom";
+import "@testing-library/jest-dom";
 
-describe("StarshipsProvider", () => {
-  // test if children element is rendered
-  test("renders StarshipsProvider component without crashing", () => {
+describe("Context API Tests", () => {
+  test("should render children components", () => {
+    const children = <div>Test Children</div>;
     render(
-      <StarshipsProvider>
-        <div>Test</div>
-      </StarshipsProvider>
+      <Router>
+        <StarshipsProvider>{children}</StarshipsProvider>
+      </Router>
     );
-  });
-});
-
-describe("StarshipsContext", () => {
-  // test if the Context is loaded properly
-  test("exports the correct context object", () => {
-    expect(StarshipsContext).toHaveProperty("Provider");
-    expect(StarshipsContext).toHaveProperty("Consumer");
+    expect(screen.getByText("Test Children")).toBeInTheDocument();
   });
 });

@@ -2,8 +2,6 @@ import { createContext, useState, useEffect } from "react";
 import { AuthContextType, ProviderProps } from "../@types/starships";
 
 export const AuthContext = createContext<AuthContextType>({
-  showLogInModal: false,
-  setShowLogInModal: () => {},
   showSignInModal: false,
   setShowSignInModal: () => {},
   email: "",
@@ -15,14 +13,16 @@ export const AuthContext = createContext<AuthContextType>({
   emailError: "",
   passwordError: "",
   isLoggedIn: false,
+  setShowMessage: () => {},
+  showMessage: false,
 });
 
 export const AuthProvider = ({ children }: ProviderProps) => {
-  const [showLogInModal, setShowLogInModal] = useState(false);
   const [showSignInModal, setShowSignInModal] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [showMessage, setShowMessage] = useState(false);
   const [emailError, setEmailError] = useState("");
   const [passwordError, setPasswordError] = useState("");
 
@@ -51,7 +51,6 @@ export const AuthProvider = ({ children }: ProviderProps) => {
     localStorage.setItem("password", password);
 
     setShowSignInModal(false);
-    setShowLogInModal(false);
   };
 
   useEffect(() => {
@@ -67,8 +66,6 @@ export const AuthProvider = ({ children }: ProviderProps) => {
   return (
     <AuthContext.Provider
       value={{
-        showLogInModal,
-        setShowLogInModal,
         showSignInModal,
         setShowSignInModal,
         email,
@@ -80,6 +77,8 @@ export const AuthProvider = ({ children }: ProviderProps) => {
         emailError,
         passwordError,
         isLoggedIn,
+        setShowMessage,
+        showMessage,
       }}
     >
       {children}

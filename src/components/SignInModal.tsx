@@ -38,9 +38,7 @@ const SignInModal = () => {
   return (
     <div className={`modalOverlay ${showSignInModal ? "show" : ""}`}>
       <form className="modal" onSubmit={handleSubmit}>
-        <button className="closeModal" onClick={handleCloseClick}>
-          X
-        </button>
+        <button className="closeButton" onClick={handleCloseClick}></button>
         <div className="modalContent">
           <h2>SIGN IN</h2>
           <div className={`form-group ${emailError ? "error" : ""}`}>
@@ -67,7 +65,7 @@ const SignInModal = () => {
             />
             {passwordError && <p className="error">{passwordError}</p>}
           </div>
-          <button className="moreInfo" type="submit">
+          <button className="modalButton" type="submit">
             CREATE ACCOUNT
           </button>
         </div>

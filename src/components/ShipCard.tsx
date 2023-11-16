@@ -10,7 +10,6 @@ const ShipCard = () => {
 
   return (
     <div key={currentShip.name}>
-      <h3>{currentShip.name.toUpperCase()}</h3>
       <img
         className="shipImage"
         src={`https://starwars-visualguide.com/assets/img/starships/${currentShip.url.replace(

@@ -31,19 +31,19 @@ export type StarshipsContextType = {
 
 // Type for the AuthContext CONTEXT values
 export type AuthContextType = {
-  showLogInModal: boolean;
-  setShowLogInModal: React.Dispatch<React.SetStateAction<boolean>>;
   showSignInModal: boolean;
   setShowSignInModal: React.Dispatch<React.SetStateAction<boolean>>;
   email: string;
   setEmail: React.Dispatch<React.SetStateAction<string>>;
   password: string;
   setPassword: React.Dispatch<React.SetStateAction<string>>;
-  setIsLoggedIn: React.Dispatch<React.SetStateAction<boolean>>;
   handleSignIn: () => void;
   emailError: string;
   passwordError: string;
+  setIsLoggedIn: React.Dispatch<React.SetStateAction<boolean>>;
   isLoggedIn: boolean;
+  setShowMessage: React.Dispatch<React.SetStateAction<boolean>>;
+  showMessage: boolean;
 };
 
 // Type for the PROPS that will be provided within the CONTEXT
@@ -53,3 +53,12 @@ export type ProviderProps = {
 
 // Type for a function that selects an specific ShipCaard
 export type SelectShipFunction = (shipNameSelected: string) => void;
+
+// Types for a testing localStorage mock
+export type LocalStorageMock = {
+  getItem: (key: string) => string | null;
+  setItem: (key: string, value: string) => void;
+  clear: () => void;
+  removeItem: (key: string) => void;
+  getAll: () => Record<string, string>;
+};

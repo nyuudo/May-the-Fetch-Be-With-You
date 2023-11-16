@@ -1,6 +1,5 @@
 import { useContext } from "react";
 import { StarshipsContext } from "../contexts/StarshipsContext";
-// include a component to implement the functionality of infinite scrolling
 import InfiniteScroll from "react-infinite-scroller";
 import ShipCard from "./ShipCard";
 
@@ -25,11 +24,15 @@ const MainContent = () => {
         pageStart={0}
         loadMore={loadMoreStarships}
         hasMore={hasMore}
-        loader={<p className="loading">Loading More...</p>}
+        loader={
+          <p className="loading" key={0}>
+            Loading more, it is...
+          </p>
+        }
       >
         {error ? <p>{error}</p> : null}
         {loading ? (
-          <p className="loading">Loading Data...</p>
+          <p className="loading">Loading Data it is...</p>
         ) : (
           <main>
             {starShips.map((ship) => (
@@ -38,7 +41,9 @@ const MainContent = () => {
                   <p className="shipName">{ship.name.toUpperCase()}</p>
                   <p className="shipModel">{ship.model}</p>
                 </div>
-                {selectedShip === ship.name ? <ShipCard /> : null}
+                {selectedShip === ship.name ? (
+                  <ShipCard key={ship.name} />
+                ) : null}
                 <button
                   className="moreInfo"
                   onClick={() => handleToggleShipCard(ship.name)}

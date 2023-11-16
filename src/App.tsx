@@ -10,7 +10,7 @@ function App() {
   const { isLoggedIn } = useContext(AuthContext);
 
   return (
-    <>
+    <div className="App">
       <Header />
       <Nav />
       <Routes>
@@ -21,7 +21,7 @@ function App() {
           <Route path="/starships/*" element={<Navigate to="/" />} />
         )}
       </Routes>
-    </>
+    </div>
   );
 }
 

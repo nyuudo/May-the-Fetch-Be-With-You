@@ -1,0 +1,70 @@
+@use "../base";
+@use "../base/breakpoints";
+
+.loading {
+  color: base.$hover-color;
+  text-align: center;
+}
+main {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+
+  @include breakpoints.xs {
+    margin: 1rem 1.25rem;
+  }
+
+  @include breakpoints.sm {
+    margin: 1rem 2.5rem;
+  }
+
+  @include breakpoints.md {
+    margin: 1rem 3.75rem;
+  }
+
+  @include breakpoints.lg {
+    margin: 1rem 3.75rem;
+  }
+
+  @include breakpoints.xl {
+    margin: 1rem 5rem;
+  }
+
+  @include breakpoints.xxl {
+    margin: 1rem 6rem;
+  }
+}
+.shipCards {
+  width: 100%;
+  border-radius: 4px;
+  background-color: base.$tertiary-color;
+  padding: 0.5rem;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+
+  @include breakpoints.md {
+    width: calc(50% - 0.5rem);
+  }
+}
+.shipInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+
+  @include breakpoints.md {
+    flex-direction: row;
+  }
+}
+.shipName {
+  font-family: base.$secondary-font;
+  color: base.$light-color;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+.shipModel {
+  color: base.$highlight-color;
+  font-size: 0.75rem;
+}
